@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { color, shape } from '../styles';
 
 import styled from 'styled-components';
+import AuthNavData from "./NavData";
 
 const Header = styled.header`
 	// padding: 20px;
@@ -43,13 +44,21 @@ function AuthNav() {
 	if (Auth.loggedIn()) {
 		return (
 			<NavigationList float="right">
+					<AuthNavData />
 				<NavigationItem>
 					{/* this is not using the Link component to logout or user and then refresh the application to the start */}
 					<a href="/" onClick={() => Auth.logout()}>
 						Logout
-					</a>
+					</a>	
+					
+				
 				</NavigationItem>
+			
 			</NavigationList>
+				
+		
+			
+			
 		);
 	} else {
 		return (
@@ -63,6 +72,7 @@ function AuthNav() {
 					<Link to="/login">
 						Login
 					</Link>
+
 				</NavigationItem>
 			</NavigationList>
 		);
@@ -80,8 +90,11 @@ function Nav() {
 					</Link>
 				</NavigationItem>
 			</NavigationList>
+			
 			<AuthNav />
+		
 		</StyledNav>
+		
     </Header>
   );
 }

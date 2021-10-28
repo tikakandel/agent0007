@@ -4,7 +4,8 @@ const color = {
 	backgroundLight: '#fafafa',
 	backgroundMedium: '#E4E4E4',
 	text: '#FFF',
-	textDark: '#424242'
+	textDark: '#424242',
+	backgroundGreen: '#112504',
 }
 
 export {
